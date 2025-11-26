@@ -1,6 +1,5 @@
 import { Target, Eye, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import teamImage from "@/assets/team-professional.jpg";
 
 const About = () => {
   const values = [
@@ -33,43 +32,33 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-          <div className="order-2 lg:order-1">
-            <img
-              src={teamImage}
-              alt="Equipe profissional ATC Especializada"
-              className="rounded-2xl shadow-card-hover w-full h-auto"
-            />
-          </div>
-          
-          <div className="order-1 lg:order-2 space-y-6">
-            {values.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="border-0 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in bg-gradient-card"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed text-sm">
-                          {item.description}
-                        </p>
-                      </div>
+        <div className="max-w-4xl mx-auto space-y-6">
+          {values.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <Card 
+                key={index}
+                className="border-0 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in bg-gradient-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
