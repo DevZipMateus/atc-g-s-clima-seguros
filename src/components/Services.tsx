@@ -1,5 +1,6 @@
 import { Flame, Wind, Wrench, Droplets, HardHat, Gauge } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import servicesDetail from "@/assets/services-detail.jpg";
 
 const Services = () => {
   const services = [
@@ -47,29 +48,53 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <Card 
-                key={index}
-                className="border-2 border-border hover:border-primary/50 transition-all duration-300 shadow-card hover:shadow-card-hover animate-scale-in group bg-gradient-card"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-hero flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2">
+            <div className="grid md:grid-cols-2 gap-6">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <Card 
+                    key={index}
+                    className="border-2 border-border hover:border-primary/50 transition-all duration-300 shadow-card hover:shadow-card-hover animate-scale-in group bg-gradient-card"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <CardContent className="p-6">
+                      <div className="w-16 h-16 rounded-xl bg-gradient-hero flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-8 h-8 text-primary-foreground" />
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+          
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <Card className="border-0 overflow-hidden shadow-card-hover">
+                <img
+                  src={servicesDetail}
+                  alt="Detalhe de instalação profissional"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </Card>
-            );
-          })}
+              <div className="mt-6 p-6 bg-gradient-hero rounded-lg text-primary-foreground">
+                <h3 className="text-xl font-bold mb-3">
+                  Atendimento profissional
+                </h3>
+                <p className="text-sm leading-relaxed opacity-90">
+                  Todos os nossos serviços são realizados por técnicos qualificados, seguindo rigorosamente as normas de segurança.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import contactImage from "@/assets/contact-support.jpg";
 
 const Contact = () => {
   const contactInfo = [
@@ -40,40 +41,64 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {contactInfo.map((info, index) => {
-            const Icon = info.icon;
-            return (
-              <Card 
-                key={index}
-                className="border-0 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in bg-gradient-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    {info.title}
-                  </h3>
-                  {info.content.map((line, i) => (
-                    <p key={i} className="text-muted-foreground text-sm">
-                      {line}
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="border-0 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in bg-gradient-card"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3">
+                      {info.title}
+                    </h3>
+                    {info.content.map((line, i) => (
+                      <p key={i} className="text-muted-foreground text-sm">
+                        {line}
+                      </p>
+                    ))}
+                    {info.action && (
+                      <Button 
+                        variant="link" 
+                        className="mt-2 text-primary hover:text-primary/80"
+                        onClick={info.action}
+                      >
+                        Clique aqui
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          <div className="lg:col-span-1">
+            <Card className="border-0 overflow-hidden shadow-card-hover h-full">
+              <div className="relative h-full min-h-[300px]">
+                <img
+                  src={contactImage}
+                  alt="Atendimento profissional"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent flex items-end p-6">
+                  <div className="text-primary-foreground">
+                    <h3 className="text-xl font-bold mb-2">
+                      Atendimento dedicado
+                    </h3>
+                    <p className="text-sm opacity-90">
+                      Nossa equipe está pronta para esclarecer suas dúvidas e oferecer as melhores soluções.
                     </p>
-                  ))}
-                  {info.action && (
-                    <Button 
-                      variant="link" 
-                      className="mt-2 text-primary hover:text-primary/80"
-                      onClick={info.action}
-                    >
-                      Clique aqui
-                    </Button>
-                  )}
-                </CardContent>
-              </Card>
-            );
-          })}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
 
         <div className="text-center animate-fade-in">
