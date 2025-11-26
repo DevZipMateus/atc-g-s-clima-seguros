@@ -30,19 +30,19 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contato" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section id="contato" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Entre em contato
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Estamos prontos para atender você com excelência e segurança
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4 sm:gap-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
@@ -51,22 +51,22 @@ const Contact = () => {
                   className="border-0 shadow-card hover:shadow-card-hover transition-all duration-300 animate-scale-in bg-gradient-card"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-7 h-7 text-primary" />
+                  <CardContent className="p-4 sm:p-6 text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2 sm:mb-3">
                       {info.title}
                     </h3>
                     {info.content.map((line, i) => (
-                      <p key={i} className="text-muted-foreground text-sm">
+                      <p key={i} className="text-muted-foreground text-xs sm:text-sm">
                         {line}
                       </p>
                     ))}
                     {info.action && (
                       <Button 
                         variant="link" 
-                        className="mt-2 text-primary hover:text-primary/80"
+                        className="mt-2 text-primary hover:text-primary/80 text-xs sm:text-sm"
                         onClick={info.action}
                       >
                         Clique aqui
@@ -80,18 +80,18 @@ const Contact = () => {
 
           <div className="lg:col-span-1">
             <Card className="border-0 overflow-hidden shadow-card-hover h-full">
-              <div className="relative h-full min-h-[300px]">
+              <div className="relative h-full min-h-[250px] sm:min-h-[300px]">
                 <img
                   src={contactImage}
                   alt="Atendimento profissional"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent flex items-end p-4 sm:p-6">
                   <div className="text-primary-foreground">
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">
                       Atendimento dedicado
                     </h3>
-                    <p className="text-sm opacity-90">
+                    <p className="text-xs sm:text-sm opacity-90">
                       Nossa equipe está pronta para esclarecer suas dúvidas e oferecer as melhores soluções.
                     </p>
                   </div>
@@ -104,10 +104,10 @@ const Contact = () => {
         <div className="text-center animate-fade-in">
           <Button
             size="lg"
-            className="bg-gradient-hero text-primary-foreground hover:opacity-90 shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-hero text-primary-foreground hover:opacity-90 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
             onClick={() => window.open("https://www.instagram.com/atcespecializadagasrio", "_blank")}
           >
-            <Instagram className="mr-2 h-5 w-5" />
+            <Instagram className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Siga-nos no Instagram
           </Button>
         </div>
