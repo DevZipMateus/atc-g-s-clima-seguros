@@ -1,4 +1,4 @@
-import { Flame, Wind, Wrench, Droplets, HardHat, Gauge, Activity } from "lucide-react";
+import { Flame, Wind, Wrench, Droplets, HardHat, Gauge, Activity, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import serviceAquecedor from "@/assets/service-aquecedor.jpg";
 import serviceArCondicionado from "@/assets/service-arcondicionado.jpg";
@@ -7,6 +7,7 @@ import serviceAdequacao from "@/assets/service-adequacao.jpg";
 import serviceRemanejamento from "@/assets/service-remanejamento.jpg";
 import serviceFogao from "@/assets/service-fogao.jpg";
 import serviceEstanqueidade from "@/assets/service-estanqueidade.jpg";
+import serviceBomba from "@/assets/service-bomba.jpg";
 
 const Services = () => {
   const services = [
@@ -51,6 +52,12 @@ const Services = () => {
       title: "Teste de estanqueidade",
       description: "Avaliação da existência de escapamento de gás na tubulação e identificação da intensidade através do uso de manômetro, garantindo a segurança do seu sistema.",
       image: serviceEstanqueidade
+    },
+    {
+      icon: Zap,
+      title: "Bomba pressurizadora",
+      description: "Venda e instalação de bombas pressurizadoras para melhorar a pressão da água em residências e estabelecimentos comerciais.",
+      image: serviceBomba
     }
   ];
 
