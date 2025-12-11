@@ -1,4 +1,4 @@
-import { Flame, Wind, Wrench, Droplets, HardHat, Gauge } from "lucide-react";
+import { Flame, Wind, Wrench, Droplets, HardHat, Gauge, Activity } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import serviceAquecedor from "@/assets/service-aquecedor.jpg";
 import serviceArCondicionado from "@/assets/service-arcondicionado.jpg";
@@ -6,6 +6,7 @@ import serviceTubulacao from "@/assets/service-tubulacao.jpg";
 import serviceAdequacao from "@/assets/service-adequacao.jpg";
 import serviceRemanejamento from "@/assets/service-remanejamento.jpg";
 import serviceFogao from "@/assets/service-fogao.jpg";
+import serviceEstanqueidade from "@/assets/service-estanqueidade.jpg";
 
 const Services = () => {
   const services = [
@@ -44,6 +45,12 @@ const Services = () => {
       title: "Fogões",
       description: "Conversão e instalação especializada de fogões para diferentes tipos de gás.",
       image: serviceFogao
+    },
+    {
+      icon: Activity,
+      title: "Teste de estanqueidade",
+      description: "Avaliação da existência de escapamento de gás na tubulação e identificação da intensidade através do uso de manômetro, garantindo a segurança do seu sistema.",
+      image: serviceEstanqueidade
     }
   ];
 
