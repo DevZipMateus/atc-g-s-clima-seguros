@@ -20,7 +20,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Endereço",
-      content: ["Rua Porto Camargo, lote 16 quadra 29", "Guaratiba - Rio de Janeiro"]
+      content: ["Guaratiba - Rio de Janeiro"]
     },
     {
       icon: Clock,
