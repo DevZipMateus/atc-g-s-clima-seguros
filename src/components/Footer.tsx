@@ -95,7 +95,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2 sm:gap-3">
               <div className="flex items-start gap-2 text-secondary-foreground/80">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
-                <p className="text-xs sm:text-sm">Rua Porto Camargo, lote 16 quadra 29<br />Guaratiba - RJ</p>
+                <p className="text-xs sm:text-sm">Guaratiba - RJ</p>
               </div>
               <div className="flex items-start gap-2 text-secondary-foreground/80">
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
