@@ -18,7 +18,7 @@ const Services = () => {
     {
       icon: Wind,
       title: "Ar-condicionado",
-      description: "Instalação e manutenção completa de sistemas de ar-condicionado. Venda de aparelhos modernos e eficientes.",
+      description: "Instalação e manutenção completa de sistemas de ar-condicionado. Autorizados Springer Midea com garantia estendida pelo fabricante. Venda de aparelhos modernos e eficientes.",
       image: serviceArCondicionado
     },
     {
